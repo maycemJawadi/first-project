@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+{{form_start(form, {'attr':{'novalidate':'novalidate'}})}}
+<table><tr><td>Nom</td><td>{{form_widget(form.name)}}</td></tr>
+<tr><td></td><td><Button type="submit">Ok</Button></td>
+</tr></table>
+
+{{form_end(form)}}
+{% endblock %}

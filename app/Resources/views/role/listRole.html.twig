@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<a class="navbar-brand"  href="{{ path('addRole') }}">Ajout</a>
+<table class="table">
+<thead> <tr> 
+ <th>Name</th>
+
+   <th>Action</th> </tr>
+    
+    </thead> <tbody>
+     {% for role in roles %}
+     <tr>
+<td>{{role.name}} </td>
+
+
+      <td><a class="btn btn-success" href="{{path('modifRole', {'id': role.id})}} " role="button">edit</a>
+      <a class="btn btn-danger" href="{{path('suppRole', {'id': role.id})}} " role="button">delete</a></td> </tr>  </tbody>
+
+{% endfor %}
+
+{% endblock %}

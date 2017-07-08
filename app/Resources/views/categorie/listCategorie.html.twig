@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<a class="navbar-brand"  href="{{ path('addCategorie') }}">Ajout</a>
+<table class="table">
+<thead> <tr> 
+ <th>Name</th>
+
+   <th>Action</th> </tr>
+    
+    </thead> <tbody>
+     {% for categorie in categories %}
+     <tr>
+<td>{{categorie.name}} </td>
+
+
+      <td><a class="btn btn-success" href="{{path('modifCategorie', {'id': categorie.id})}} " role="button">edit</a>
+      <a class="btn btn-danger" href="{{path('suppCategorie', {'id': categorie.id})}} " role="button">delete</a></td> </tr>  </tbody>
+
+{% endfor %}
+
+{% endblock %}
