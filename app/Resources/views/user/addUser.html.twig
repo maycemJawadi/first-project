@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+{{form_start(form, {'attr':{'novalidate':'novalidate'}})}}
+<table><tr><td>Nom</td><td>{{form_widget(form.firstname)}}</td></tr>
+<tr><td>Prenom</td><td>{{form_widget(form.lastname)}}</td></tr>
+<tr><td>Email</td><td>{{form_widget(form.email)}}</td></tr>
+<tr><td>Mot de passe</td><td>{{form_widget(form.password)}}</td></tr>
+<tr><td>Avatar</td><td>{{form_widget(form.avatar)}}</td></tr>
+<tr><td>Role</td><td>{{form_widget(form.role)}}</td></tr>
+<tr><td></td><td><Button type="submit">Ok</Button></td>
+</tr></table>
+
+{{form_end(form)}}
+{% endblock %}

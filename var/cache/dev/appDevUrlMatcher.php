@@ -149,6 +149,26 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'suppRole')), array (  '_controller' => 'AppBundle\\Controller\\RoleController::suppAction',));
         }
 
+        // listUser
+        if ($pathinfo === '/listUser') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UserController::listAction',  '_route' => 'listUser',);
+        }
+
+        // addUser
+        if ($pathinfo === '/addtUser') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UserController::addAction',  '_route' => 'addUser',);
+        }
+
+        // modifUser
+        if (0 === strpos($pathinfo, '/modifUser') && preg_match('#^/modifUser/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'modifUser')), array (  '_controller' => 'AppBundle\\Controller\\UserController::modifAction',));
+        }
+
+        // suppUser
+        if (0 === strpos($pathinfo, '/suppUser') && preg_match('#^/suppUser/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'suppUser')), array (  '_controller' => 'AppBundle\\Controller\\UserController::suppAction',));
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<a class="navbar-brand"  href="{{ path('addUser') }}">Ajout</a>
+<table class="table">
+<thead> <tr> 
+ <th>Nom</th>
+ <th>Prenom</th>
+<th>Email</th>
+<th>Role</th>
+   <th>Action</th> </tr>
+    
+    </thead> <tbody>
+     {% for user in users %}
+     <tr>
+<td>{{user.firstname}}</td>
+<td>{{user.lastname}}</td>
+<td>{{user.email}}</td>
+<td>{{user.role.name}}</td>
+
+      <td><a class="btn btn-success" href="{{path('modifUser', {'id': user.id})}} " role="button">edit</a>
+      <a class="btn btn-danger" href="{{path('suppUser', {'id': user.id})}} " role="button">delete</a></td> </tr>  </tbody>
+
+{% endfor %}
+
+{% endblock %}

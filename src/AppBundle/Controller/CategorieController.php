@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CategorieController extends Controller
 {
-    /**
+     /**
      * @Route("/listCategorie", name="listCategorie")
      */
     public function listAction(Request $request)
@@ -22,6 +22,7 @@ class CategorieController extends Controller
 return $this->render('categorie/listCategorie.html.twig',array('categories'=>$categories));
 
     }
+    
     /**
      * @Route("/addCategorie", name="addCategorie")
      */
