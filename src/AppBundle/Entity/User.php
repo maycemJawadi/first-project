@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * User
@@ -39,6 +40,11 @@ class User
      * @var string
      *
      * @ORM\Column(name="avatar", type="string", length=255)
+     **
+     * @Assert\Image(
+     *     allowLandscape = true,
+     *     allowPortrait = true
+     * )
      */
     private $avatar;
 
@@ -46,6 +52,11 @@ class User
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
+     *
+     * @Assert\Email(
+     *     message = "'{{ value }}' n est pas un email valide."
+     *   
+     * )
      */
     private $email;
 
@@ -55,7 +66,12 @@ class User
      * @ORM\Column(name="password", type="string", length=255)
      */
     private $password;
-
+/**
+     * @ORM\ManyToOne(targetEntity="Role", inversedBy="users")
+     * @ORM\JoinColumn(name="role_id", referencedColumnName="id",nullable=false)
+     *
+     */
+    private $role;
 
     /**
      * Get id
@@ -185,5 +201,29 @@ class User
     public function getPassword()
     {
         return $this->password;
+    }
+
+    /**
+     * Set role
+     *
+     * @param \AppBundle\Entity\Role $role
+     *
+     * @return User
+     */
+    public function setRole(\AppBundle\Entity\Role $role)
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+    /**
+     * Get role
+     *
+     * @return \AppBundle\Entity\Role
+     */
+    public function getRole()
+    {
+        return $this->role;
     }
 }

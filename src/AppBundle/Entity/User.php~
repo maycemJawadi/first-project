@@ -55,7 +55,12 @@ class User
      * @ORM\Column(name="password", type="string", length=255)
      */
     private $password;
-
+/**
+     * @ORM\ManyToOne(targetEntity="Role", inversedBy="users")
+     * @ORM\JoinColumn(name="role_id", referencedColumnName="id",nullable=false)
+     *
+     */
+    private $role;
 
     /**
      * Get id
@@ -187,4 +192,3 @@ class User
         return $this->password;
     }
 }
-

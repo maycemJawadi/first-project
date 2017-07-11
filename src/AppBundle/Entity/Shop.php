@@ -45,14 +45,14 @@ class Shop
     /**
      * @var string
      *
-     * @ORM\Column(name="longitude", type="string", length=255)
+     * @ORM\Column(name="longitude",type="decimal", precision=10, scale=29)
      */
     private $longitude;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="lattitude", type="string", length=255)
+     * @ORM\Column(name="lattitude",type="decimal", precision=10, scale=29)
      */
     private $lattitude;
 

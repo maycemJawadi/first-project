@@ -5,6 +5,12 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+
+
 
 class UserType extends AbstractType
 {
@@ -18,8 +24,15 @@ class UserType extends AbstractType
             ->add('firstname')
             ->add('lastname')
             ->add('avatar')
-            ->add('email')
-            ->add('password')
+           ->add('email',EmailType::class)
+            ->add('password',PasswordType::class)
+             ->add('role',EntityType::class,
+            array('class'=>'AppBundle\Entity\Role','choice_label'=>'name',
+        
+            'multiple'=>false,
+            'choices'=>$options['listRole'],
+           'expanded'=>false
+            ))
         ;
     }
     
@@ -31,5 +44,7 @@ class UserType extends AbstractType
         $resolver->setDefaults(array(
             'data_class' => 'AppBundle\Entity\User'
         ));
-    }
+  
+        $resolver->setRequired(array('listRole'));}
+ 
 }

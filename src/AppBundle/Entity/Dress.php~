@@ -125,4 +125,3 @@ class Dress
         return $this->image;
     }
 }
-
