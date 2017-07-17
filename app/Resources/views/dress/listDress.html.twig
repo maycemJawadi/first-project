@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<a class="navbar-brand"  href="{{ path('addDress') }}">Ajout</a>
+<table class="table">
+<thead> <tr> 
+ <th>Réference</th>
+ <th>Nom</th>
+<th>Image</th>
+<th>Categorie</th>
+<th>Shop</th>
+   <th>Action</th> </tr>
+    
+    </thead> <tbody>
+     {% for dress in dresses %}
+     <tr>
+<td>{{dress.ref}}</td>
+<td>{{dress.name}}</td>
+<td>  <img src="{{ asset('uploads/dress/'~ dress.image)}}" width="50" height="50" />
+</td>
+<td>{{dress.categorie.name}}</td>
+<td>{{dress.shop.name}}</td>
+<td><a class="btn btn-success" href="{{path('modifDress', {'id': dress.id})}} " role="button">edit</a>
+<a class="btn btn-danger" href="{{path('suppDress', {'id': dress.id})}} " role="button">delete</a></td> </tr>  </tbody>
+
+{% endfor %}
+
+{% endblock %}

@@ -63,7 +63,11 @@ class Shop
      */
     private $user;
 
-
+ /**
+     * @ORM\OneToMany(targetEntity="Dress", mappedBy="shop")
+    *
+     */
+    private $dresses;
 
 
     /**
@@ -218,5 +222,46 @@ class Shop
     public function getUser()
     {
         return $this->user;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->dresses = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add dress
+     *
+     * @param \AppBundle\Entity\Dress $dress
+     *
+     * @return Shop
+     */
+    public function addDress(\AppBundle\Entity\Dress $dress)
+    {
+        $this->dresses[] = $dress;
+
+        return $this;
+    }
+
+    /**
+     * Remove dress
+     *
+     * @param \AppBundle\Entity\Dress $dress
+     */
+    public function removeDress(\AppBundle\Entity\Dress $dress)
+    {
+        $this->dresses->removeElement($dress);
+    }
+
+    /**
+     * Get dresses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDresses()
+    {
+        return $this->dresses;
     }
 }

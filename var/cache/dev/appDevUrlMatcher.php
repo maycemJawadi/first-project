@@ -129,6 +129,26 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
+        // listDress
+        if ($pathinfo === '/listDress') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DressController::listAction',  '_route' => 'listDress',);
+        }
+
+        // addDress
+        if ($pathinfo === '/addDress') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DressController::addAction',  '_route' => 'addDress',);
+        }
+
+        // modifDress
+        if (0 === strpos($pathinfo, '/modifDress') && preg_match('#^/modifDress/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'modifDress')), array (  '_controller' => 'AppBundle\\Controller\\DressController::modifAction',));
+        }
+
+        // suppDress
+        if (0 === strpos($pathinfo, '/suppDress') && preg_match('#^/suppDress/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'suppDress')), array (  '_controller' => 'AppBundle\\Controller\\DressController::suppAction',));
+        }
+
         // listRole
         if ($pathinfo === '/listRole') {
             return array (  '_controller' => 'AppBundle\\Controller\\RoleController::listAction',  '_route' => 'listRole',);

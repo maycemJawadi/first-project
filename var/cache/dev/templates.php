@@ -110,6 +110,8 @@
   'WebProfilerBundle:Collector:time.html.twig' => '/home/maycem/Bureau/github/first-project/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/time.html.twig',
   'WebProfilerBundle:Collector:exception.css.twig' => '/home/maycem/Bureau/github/first-project/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/exception.css.twig',
   'WebProfilerBundle:Collector:request.html.twig' => '/home/maycem/Bureau/github/first-project/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/request.html.twig',
+  ':dress:listDress.html.twig' => '/home/maycem/Bureau/github/first-project/app/Resources/views/dress/listDress.html.twig',
+  ':dress:addDress.html.twig' => '/home/maycem/Bureau/github/first-project/app/Resources/views/dress/addDress.html.twig',
   ':default:index.html.twig' => '/home/maycem/Bureau/github/first-project/app/Resources/views/default/index.html.twig',
   ':default:test.html.twig' => '/home/maycem/Bureau/github/first-project/app/Resources/views/default/test.html.twig',
   ':categorie:listCategorie.html.twig' => '/home/maycem/Bureau/github/first-project/app/Resources/views/categorie/listCategorie.html.twig',

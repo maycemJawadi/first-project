@@ -16,14 +16,15 @@
         };
         map = new google.maps.Map(document.getElementById('map'),
             mapOptions);
-
+      
         var marker = new google.maps.Marker({
           // The below line is equivalent to writing:
           // position: new google.maps.LatLng(-34.397, 150.644)
-          position: { lat:{{unshop.lattitude}},lng:{{unshop.longitude}} },
+
          
           map: map
         });
+        
 
         // You can use a LatLng literal in place of a google.maps.LatLng object when
         // creating the Marker object. Once the Marker object is instantiated, its

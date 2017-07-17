@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+{{form_start(form, {'attr':{'novalidate':'novalidate'}})}}
+<table>
+<tr><td>Réference</td><td>{{form_widget(form.ref)}}</td></tr>
+<tr><td>Nom</td><td>{{form_widget(form.name)}}</td></tr>
+
+<tr><td>Image</td><td>{{form_widget(form.image)}}</td></tr>
+<tr><td>Shop</td><td>{{form_widget(form.shop)}}</td></tr>
+<tr><td>Categorie</td><td>{{form_widget(form.categorie)}}</td></tr>
+<tr><td></td><td><Button type="submit">Ok</Button></td>
+</tr></table>
+
+{{form_end(form)}}
+{% endblock %}

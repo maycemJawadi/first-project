@@ -29,6 +29,13 @@ class Categorie
     private $name;
 
 
+
+ /**
+     * @ORM\OneToMany(targetEntity="Dress", mappedBy="categorie")
+    *
+     */
+    private $dresses;
+
     /**
      * Get id
      *

@@ -15,8 +15,8 @@ class __TwigTemplate_4d1270324a8672b9bc65b01fd7606f3e316bbd26fab7443a601a3e8cc78
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_2e9fb99da81199c09f7485ecdf7d0796191cfb2132fef92b82cc8d96fa3c7e55 = $this->env->getExtension("native_profiler");
-        $__internal_2e9fb99da81199c09f7485ecdf7d0796191cfb2132fef92b82cc8d96fa3c7e55->enter($__internal_2e9fb99da81199c09f7485ecdf7d0796191cfb2132fef92b82cc8d96fa3c7e55_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":shop:test.html.twig"));
+        $__internal_f815db8cc59bba602cababe82d7cb5f360bb7c769eba99fb62ad32be7d7f198c = $this->env->getExtension("native_profiler");
+        $__internal_f815db8cc59bba602cababe82d7cb5f360bb7c769eba99fb62ad32be7d7f198c->enter($__internal_f815db8cc59bba602cababe82d7cb5f360bb7c769eba99fb62ad32be7d7f198c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":shop:test.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -68,7 +68,7 @@ tab= new array(lng:";
   </body>
 </html>";
         
-        $__internal_2e9fb99da81199c09f7485ecdf7d0796191cfb2132fef92b82cc8d96fa3c7e55->leave($__internal_2e9fb99da81199c09f7485ecdf7d0796191cfb2132fef92b82cc8d96fa3c7e55_prof);
+        $__internal_f815db8cc59bba602cababe82d7cb5f360bb7c769eba99fb62ad32be7d7f198c->leave($__internal_f815db8cc59bba602cababe82d7cb5f360bb7c769eba99fb62ad32be7d7f198c_prof);
 
     }
 

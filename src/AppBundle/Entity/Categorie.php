@@ -29,6 +29,13 @@ class Categorie
     private $name;
 
 
+
+ /**
+     * @ORM\OneToMany(targetEntity="Dress", mappedBy="categorie")
+    *
+     */
+    private $dresses;
+
     /**
      * Get id
      *
@@ -61,5 +68,46 @@ class Categorie
     public function getName()
     {
         return $this->name;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->dresses = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add dress
+     *
+     * @param \AppBundle\Entity\Dress $dress
+     *
+     * @return Categorie
+     */
+    public function addDress(\AppBundle\Entity\Dress $dress)
+    {
+        $this->dresses[] = $dress;
+
+        return $this;
+    }
+
+    /**
+     * Remove dress
+     *
+     * @param \AppBundle\Entity\Dress $dress
+     */
+    public function removeDress(\AppBundle\Entity\Dress $dress)
+    {
+        $this->dresses->removeElement($dress);
+    }
+
+    /**
+     * Get dresses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDresses()
+    {
+        return $this->dresses;
     }
 }

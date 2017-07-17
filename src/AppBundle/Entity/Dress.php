@@ -43,6 +43,20 @@ class Dress
     private $image;
 
 
+/**
+     * @ORM\ManyToOne(targetEntity="Shop", inversedBy="dresses")
+     * @ORM\JoinColumn(name="shop_id", referencedColumnName="id",nullable=false)
+     *
+     */
+    private $shop;
+
+
+   /**
+     * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="dresses")
+     * @ORM\JoinColumn(name="categorie_id", referencedColumnName="id",nullable=false)
+     *
+     */
+    private $categorie;
     /**
      * Get id
      *
@@ -123,5 +137,53 @@ class Dress
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set shop
+     *
+     * @param \AppBundle\Entity\Shop $shop
+     *
+     * @return Dress
+     */
+    public function setShop(\AppBundle\Entity\Shop $shop)
+    {
+        $this->shop = $shop;
+
+        return $this;
+    }
+
+    /**
+     * Get shop
+     *
+     * @return \AppBundle\Entity\Shop
+     */
+    public function getShop()
+    {
+        return $this->shop;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param \AppBundle\Entity\Categorie $categorie
+     *
+     * @return Dress
+     */
+    public function setCategorie(\AppBundle\Entity\Categorie $categorie)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \AppBundle\Entity\Categorie
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
     }
 }
