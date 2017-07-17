@@ -45,16 +45,25 @@ class Shop
     /**
      * @var string
      *
-     * @ORM\Column(name="longitude",type="decimal", precision=10, scale=29)
+     * @ORM\Column(name="longitude",type="float")
      */
     private $longitude;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="lattitude",type="decimal", precision=10, scale=29)
+     * @ORM\Column(name="lattitude",type="float")
      */
     private $lattitude;
+
+/**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="shops")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id",nullable=false)
+     *
+     */
+    private $user;
+
+
 
 
     /**
@@ -185,5 +194,29 @@ class Shop
     public function getLattitude()
     {
         return $this->lattitude;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return Shop
+     */
+    public function setUser(\AppBundle\Entity\User $user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

@@ -7,6 +7,7 @@
  <th>Prenom</th>
 <th>Email</th>
 <th>Role</th>
+ <th>Avatar</th>
    <th>Action</th> </tr>
     
     </thead> <tbody>
@@ -16,6 +17,11 @@
 <td>{{user.lastname}}</td>
 <td>{{user.email}}</td>
 <td>{{user.role.name}}</td>
+<td>
+	
+
+<img src="{{ asset('uploads/avatar/'~ user.avatar)}}" width="50" height="50" />
+</td>
 
       <td><a class="btn btn-success" href="{{path('modifUser', {'id': user.id})}} " role="button">edit</a>
       <a class="btn btn-danger" href="{{path('suppUser', {'id': user.id})}} " role="button">delete</a></td> </tr>  </tbody>

@@ -1,6 +1,6 @@
 <?php
 
-/* user/listUser.html.twig */
+/* :user:listUser.html.twig */
 class __TwigTemplate_a19195999042e5435c2861ddf7cb1837fd6919dca1bd2979e077a4b1e82b4c92 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_a19195999042e5435c2861ddf7cb1837fd6919dca1bd2979e077a4b1e82
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "user/listUser.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":user:listUser.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
@@ -21,20 +21,20 @@ class __TwigTemplate_a19195999042e5435c2861ddf7cb1837fd6919dca1bd2979e077a4b1e82
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_fa66f03a1ca0ce7f2a480f747703c2d34cd977bf6c6d63d85b34ec1057bddbc5 = $this->env->getExtension("native_profiler");
-        $__internal_fa66f03a1ca0ce7f2a480f747703c2d34cd977bf6c6d63d85b34ec1057bddbc5->enter($__internal_fa66f03a1ca0ce7f2a480f747703c2d34cd977bf6c6d63d85b34ec1057bddbc5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "user/listUser.html.twig"));
+        $__internal_0a249b344ac3777299a7f8cf49caba3837694894f2a3474c0d00c2bba74e6892 = $this->env->getExtension("native_profiler");
+        $__internal_0a249b344ac3777299a7f8cf49caba3837694894f2a3474c0d00c2bba74e6892->enter($__internal_0a249b344ac3777299a7f8cf49caba3837694894f2a3474c0d00c2bba74e6892_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":user:listUser.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_fa66f03a1ca0ce7f2a480f747703c2d34cd977bf6c6d63d85b34ec1057bddbc5->leave($__internal_fa66f03a1ca0ce7f2a480f747703c2d34cd977bf6c6d63d85b34ec1057bddbc5_prof);
+        $__internal_0a249b344ac3777299a7f8cf49caba3837694894f2a3474c0d00c2bba74e6892->leave($__internal_0a249b344ac3777299a7f8cf49caba3837694894f2a3474c0d00c2bba74e6892_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_41594563d2b619742b2a23276697328e492dcd2db3796d5c02a37d76325dadbd = $this->env->getExtension("native_profiler");
-        $__internal_41594563d2b619742b2a23276697328e492dcd2db3796d5c02a37d76325dadbd->enter($__internal_41594563d2b619742b2a23276697328e492dcd2db3796d5c02a37d76325dadbd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_94daebb5f508b37ffc1c199fd9be9ce1ddf565a904466dd434e98d211a49495e = $this->env->getExtension("native_profiler");
+        $__internal_94daebb5f508b37ffc1c199fd9be9ce1ddf565a904466dd434e98d211a49495e->enter($__internal_94daebb5f508b37ffc1c199fd9be9ce1ddf565a904466dd434e98d211a49495e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
         echo "<a class=\"navbar-brand\"  href=\"";
@@ -46,39 +46,48 @@ class __TwigTemplate_a19195999042e5435c2861ddf7cb1837fd6919dca1bd2979e077a4b1e82
  <th>Prenom</th>
 <th>Email</th>
 <th>Role</th>
+ <th>Avatar</th>
    <th>Action</th> </tr>
     
     </thead> <tbody>
      ";
-        // line 13
+        // line 14
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["users"]) ? $context["users"] : $this->getContext($context, "users")));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 14
+            // line 15
             echo "     <tr>
 <td>";
-            // line 15
+            // line 16
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "firstname", array()), "html", null, true);
             echo "</td>
 <td>";
-            // line 16
+            // line 17
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "lastname", array()), "html", null, true);
             echo "</td>
 <td>";
-            // line 17
+            // line 18
             echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "email", array()), "html", null, true);
             echo "</td>
 <td>";
-            // line 18
+            // line 19
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["user"], "role", array()), "name", array()), "html", null, true);
             echo "</td>
+<td>
+\t
+
+<img src=\"";
+            // line 23
+            echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl(("uploads/avatar/" . $this->getAttribute($context["user"], "avatar", array()))), "html", null, true);
+            echo "\" width=\"50\" height=\"50\" />
+</td>
 
       <td><a class=\"btn btn-success\" href=\"";
-            // line 20
+            // line 26
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("modifUser", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
             echo " \" role=\"button\">edit</a>
       <a class=\"btn btn-danger\" href=\"";
-            // line 21
+            // line 27
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("suppUser", array("id" => $this->getAttribute($context["user"], "id", array()))), "html", null, true);
             echo " \" role=\"button\">delete</a></td> </tr>  </tbody>
 
@@ -87,17 +96,17 @@ class __TwigTemplate_a19195999042e5435c2861ddf7cb1837fd6919dca1bd2979e077a4b1e82
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 24
+        // line 30
         echo "
 ";
         
-        $__internal_41594563d2b619742b2a23276697328e492dcd2db3796d5c02a37d76325dadbd->leave($__internal_41594563d2b619742b2a23276697328e492dcd2db3796d5c02a37d76325dadbd_prof);
+        $__internal_94daebb5f508b37ffc1c199fd9be9ce1ddf565a904466dd434e98d211a49495e->leave($__internal_94daebb5f508b37ffc1c199fd9be9ce1ddf565a904466dd434e98d211a49495e_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "user/listUser.html.twig";
+        return ":user:listUser.html.twig";
     }
 
     public function isTraitable()
@@ -107,7 +116,7 @@ class __TwigTemplate_a19195999042e5435c2861ddf7cb1837fd6919dca1bd2979e077a4b1e82
 
     public function getDebugInfo()
     {
-        return array (  91 => 24,  82 => 21,  78 => 20,  73 => 18,  69 => 17,  65 => 16,  61 => 15,  58 => 14,  54 => 13,  40 => 3,  34 => 2,  11 => 1,);
+        return array (  100 => 30,  91 => 27,  87 => 26,  81 => 23,  74 => 19,  70 => 18,  66 => 17,  62 => 16,  59 => 15,  55 => 14,  40 => 3,  34 => 2,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -119,6 +128,7 @@ class __TwigTemplate_a19195999042e5435c2861ddf7cb1837fd6919dca1bd2979e077a4b1e82
 /*  <th>Prenom</th>*/
 /* <th>Email</th>*/
 /* <th>Role</th>*/
+/*  <th>Avatar</th>*/
 /*    <th>Action</th> </tr>*/
 /*     */
 /*     </thead> <tbody>*/
@@ -128,6 +138,11 @@ class __TwigTemplate_a19195999042e5435c2861ddf7cb1837fd6919dca1bd2979e077a4b1e82
 /* <td>{{user.lastname}}</td>*/
 /* <td>{{user.email}}</td>*/
 /* <td>{{user.role.name}}</td>*/
+/* <td>*/
+/* 	*/
+/* */
+/* <img src="{{ asset('uploads/avatar/'~ user.avatar)}}" width="50" height="50" />*/
+/* </td>*/
 /* */
 /*       <td><a class="btn btn-success" href="{{path('modifUser', {'id': user.id})}} " role="button">edit</a>*/
 /*       <a class="btn btn-danger" href="{{path('suppUser', {'id': user.id})}} " role="button">delete</a></td> </tr>  </tbody>*/

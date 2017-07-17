@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+  
+{% block body %}
+
+
+ <script type="text/javascript">
+
+      function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 6,
+          center: {lat: 36.8189700, lng:  10.1657900}
+        });
+
+     
+
+        // Create an array of alphabetical characters used to label the marker
+
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+        var markers = locations.map(function(location) {
+           return marker= new google.maps.Marker({
+            position:location
+           
+           
+          });
+          
+        });
+
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      
+       // locations.forEach(function(e) {
+   //var marker = new google.maps.Marker({
+     //  position: e,
+      // map: map });})
+      }
+
+  
+var  locations=[]
+var i = 0;
+{% for shop in shops %}
+locations[i]={lat:{{shop.lat}},lng:{{shop.lng}}}
+i++;
+{% endfor %}
+console.log(locations)
+
+
+
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHE0hQqRcgMyLXnDFBI_RtMAaH58E3YQY&callback=initMap&language=fr"
+   async defer></script>
+
+   <div id="map" style="height:550px;" ></div>
+
+{% endblock %}

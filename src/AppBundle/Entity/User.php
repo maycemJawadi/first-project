@@ -40,11 +40,7 @@ class User
      * @var string
      *
      * @ORM\Column(name="avatar", type="string", length=255)
-     **
-     * @Assert\Image(
-     *     allowLandscape = true,
-     *     allowPortrait = true
-     * )
+     *
      */
     private $avatar;
 
@@ -72,7 +68,13 @@ class User
      *
      */
     private $role;
+    
 
+ /**
+     * @ORM\OneToMany(targetEntity="Shop", mappedBy="user")
+    *
+     */
+    private $shops;
     /**
      * Get id
      *
@@ -225,5 +227,46 @@ class User
     public function getRole()
     {
         return $this->role;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->shops = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add shop
+     *
+     * @param \AppBundle\Entity\Shop $shop
+     *
+     * @return User
+     */
+    public function addShop(\AppBundle\Entity\Shop $shop)
+    {
+        $this->shops[] = $shop;
+
+        return $this;
+    }
+
+    /**
+     * Remove shop
+     *
+     * @param \AppBundle\Entity\Shop $shop
+     */
+    public function removeShop(\AppBundle\Entity\Shop $shop)
+    {
+        $this->shops->removeElement($shop);
+    }
+
+    /**
+     * Get shops
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getShops()
+    {
+        return $this->shops;
     }
 }

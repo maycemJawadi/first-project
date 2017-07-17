@@ -149,6 +149,44 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'suppRole')), array (  '_controller' => 'AppBundle\\Controller\\RoleController::suppAction',));
         }
 
+        // listShop
+        if ($pathinfo === '/listShop') {
+            return array (  '_controller' => 'AppBundle\\Controller\\ShopController::listAction',  '_route' => 'listShop',);
+        }
+
+        // nosBoutique
+        if ($pathinfo === '/nosBoutique') {
+            return array (  '_controller' => 'AppBundle\\Controller\\ShopController::nosBoutiqueAction',  '_route' => 'nosBoutique',);
+        }
+
+        // BoutiqueA
+        if ($pathinfo === '/BoutiqueA') {
+            return array (  '_controller' => 'AppBundle\\Controller\\ShopController::BoutiqueAddressAction',  '_route' => 'BoutiqueA',);
+        }
+
+        if (0 === strpos($pathinfo, '/a')) {
+            // addShop
+            if ($pathinfo === '/addShop') {
+                return array (  '_controller' => 'AppBundle\\Controller\\ShopController::addAction',  '_route' => 'addShop',);
+            }
+
+            // affichShop
+            if (0 === strpos($pathinfo, '/affichShop') && preg_match('#^/affichShop/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'affichShop')), array (  '_controller' => 'AppBundle\\Controller\\ShopController::afficheAction',));
+            }
+
+        }
+
+        // modifShop
+        if (0 === strpos($pathinfo, '/modifShop') && preg_match('#^/modifShop/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'modifShop')), array (  '_controller' => 'AppBundle\\Controller\\ShopController::modifAction',));
+        }
+
+        // suppShop
+        if (0 === strpos($pathinfo, '/suppShop') && preg_match('#^/suppShop/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'suppShop')), array (  '_controller' => 'AppBundle\\Controller\\ShopController::suppAction',));
+        }
+
         // listUser
         if ($pathinfo === '/listUser') {
             return array (  '_controller' => 'AppBundle\\Controller\\UserController::listAction',  '_route' => 'listUser',);

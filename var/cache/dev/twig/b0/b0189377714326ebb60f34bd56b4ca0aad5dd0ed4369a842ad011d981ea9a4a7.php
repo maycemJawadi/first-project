@@ -1,6 +1,6 @@
 <?php
 
-/* :default:index.html.twig */
+/* default/index.html.twig */
 class __TwigTemplate_6f9a69d6fa85a3ce0648c7446d1b9faff70701eadac76ddcdd0772add03fbf3c extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_6f9a69d6fa85a3ce0648c7446d1b9faff70701eadac76ddcdd0772add03
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", ":default:index.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "default/index.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
             'stylesheets' => array($this, 'block_stylesheets'),
@@ -22,20 +22,20 @@ class __TwigTemplate_6f9a69d6fa85a3ce0648c7446d1b9faff70701eadac76ddcdd0772add03
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_480c17a609bff676407e89f93fb7a4298242ece748a132d87cf7a4e45e06eecc = $this->env->getExtension("native_profiler");
-        $__internal_480c17a609bff676407e89f93fb7a4298242ece748a132d87cf7a4e45e06eecc->enter($__internal_480c17a609bff676407e89f93fb7a4298242ece748a132d87cf7a4e45e06eecc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":default:index.html.twig"));
+        $__internal_ff00debbd46f0fdbd0c98c0d2fdf4a1e75756614562f6ea0dfe1db00c0e41d76 = $this->env->getExtension("native_profiler");
+        $__internal_ff00debbd46f0fdbd0c98c0d2fdf4a1e75756614562f6ea0dfe1db00c0e41d76->enter($__internal_ff00debbd46f0fdbd0c98c0d2fdf4a1e75756614562f6ea0dfe1db00c0e41d76_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_480c17a609bff676407e89f93fb7a4298242ece748a132d87cf7a4e45e06eecc->leave($__internal_480c17a609bff676407e89f93fb7a4298242ece748a132d87cf7a4e45e06eecc_prof);
+        $__internal_ff00debbd46f0fdbd0c98c0d2fdf4a1e75756614562f6ea0dfe1db00c0e41d76->leave($__internal_ff00debbd46f0fdbd0c98c0d2fdf4a1e75756614562f6ea0dfe1db00c0e41d76_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_afa9171d834333060c5418972584b54f13a69dc6ee6a419635793ee6e1d53904 = $this->env->getExtension("native_profiler");
-        $__internal_afa9171d834333060c5418972584b54f13a69dc6ee6a419635793ee6e1d53904->enter($__internal_afa9171d834333060c5418972584b54f13a69dc6ee6a419635793ee6e1d53904_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_a3a9cc8a5aaf74bf21f2903d21b213464e89844b7cd86c07b7fa40631c0e8333 = $this->env->getExtension("native_profiler");
+        $__internal_a3a9cc8a5aaf74bf21f2903d21b213464e89844b7cd86c07b7fa40631c0e8333->enter($__internal_a3a9cc8a5aaf74bf21f2903d21b213464e89844b7cd86c07b7fa40631c0e8333_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <div id=\"wrapper\">
@@ -52,10 +52,7 @@ class __TwigTemplate_6f9a69d6fa85a3ce0648c7446d1b9faff70701eadac76ddcdd0772add03
                     <svg id=\"icon-status\" width=\"1792\" height=\"1792\" viewBox=\"0 0 1792 1792\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z\" fill=\"#759E1A\"/></svg>
 
                     Your application is now ready. You can start working on it at:
-                    <code>";
-        // line 15
-        echo twig_escape_filter($this->env, (isset($context["base_dir"]) ? $context["base_dir"] : $this->getContext($context, "base_dir")), "html", null, true);
-        echo "/</code>
+                    
                 </p>
             </div>
 
@@ -92,15 +89,15 @@ class __TwigTemplate_6f9a69d6fa85a3ce0648c7446d1b9faff70701eadac76ddcdd0772add03
     </div>
 ";
         
-        $__internal_afa9171d834333060c5418972584b54f13a69dc6ee6a419635793ee6e1d53904->leave($__internal_afa9171d834333060c5418972584b54f13a69dc6ee6a419635793ee6e1d53904_prof);
+        $__internal_a3a9cc8a5aaf74bf21f2903d21b213464e89844b7cd86c07b7fa40631c0e8333->leave($__internal_a3a9cc8a5aaf74bf21f2903d21b213464e89844b7cd86c07b7fa40631c0e8333_prof);
 
     }
 
     // line 49
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_764736adb29107e9abe14fa862ea5d20f7a942c0df1d2e42ae80574b69ca5e9d = $this->env->getExtension("native_profiler");
-        $__internal_764736adb29107e9abe14fa862ea5d20f7a942c0df1d2e42ae80574b69ca5e9d->enter($__internal_764736adb29107e9abe14fa862ea5d20f7a942c0df1d2e42ae80574b69ca5e9d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_92a3af8cc9a7ab53659beaaaaa09a7965ce905f6e74be22fc78e0492da862ec3 = $this->env->getExtension("native_profiler");
+        $__internal_92a3af8cc9a7ab53659beaaaaa09a7965ce905f6e74be22fc78e0492da862ec3->enter($__internal_92a3af8cc9a7ab53659beaaaaa09a7965ce905f6e74be22fc78e0492da862ec3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 50
         echo "<style>
@@ -131,13 +128,13 @@ class __TwigTemplate_6f9a69d6fa85a3ce0648c7446d1b9faff70701eadac76ddcdd0772add03
 </style>
 ";
         
-        $__internal_764736adb29107e9abe14fa862ea5d20f7a942c0df1d2e42ae80574b69ca5e9d->leave($__internal_764736adb29107e9abe14fa862ea5d20f7a942c0df1d2e42ae80574b69ca5e9d_prof);
+        $__internal_92a3af8cc9a7ab53659beaaaaa09a7965ce905f6e74be22fc78e0492da862ec3->leave($__internal_92a3af8cc9a7ab53659beaaaaa09a7965ce905f6e74be22fc78e0492da862ec3_prof);
 
     }
 
     public function getTemplateName()
     {
-        return ":default:index.html.twig";
+        return "default/index.html.twig";
     }
 
     public function isTraitable()
@@ -147,7 +144,7 @@ class __TwigTemplate_6f9a69d6fa85a3ce0648c7446d1b9faff70701eadac76ddcdd0772add03
 
     public function getDebugInfo()
     {
-        return array (  106 => 50,  100 => 49,  84 => 39,  57 => 15,  46 => 7,  41 => 4,  35 => 3,  11 => 1,);
+        return array (  103 => 50,  97 => 49,  81 => 39,  46 => 7,  41 => 4,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -164,7 +161,7 @@ class __TwigTemplate_6f9a69d6fa85a3ce0648c7446d1b9faff70701eadac76ddcdd0772add03
 /*                     <svg id="icon-status" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" fill="#759E1A"/></svg>*/
 /* */
 /*                     Your application is now ready. You can start working on it at:*/
-/*                     <code>{{ base_dir }}/</code>*/
+/*                     */
 /*                 </p>*/
 /*             </div>*/
 /* */
@@ -226,4 +223,3 @@ class __TwigTemplate_6f9a69d6fa85a3ce0648c7446d1b9faff70701eadac76ddcdd0772add03
 /*     }*/
 /* </style>*/
 /* {% endblock %}*/
-/* */

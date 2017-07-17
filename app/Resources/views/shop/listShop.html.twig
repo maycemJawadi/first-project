@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<a class="navbar-brand"  href="{{ path('addShop') }}">Ajout</a>
+<table class="table">
+<thead> <tr> 
+ <th>Nom</th>
+ <th>Téléphone</th>
+<th>adresse</th>
+<th>Utilisateur</th>
+   <th>Action</th> </tr>
+    
+    </thead> <tbody>
+     {% for shop in shops %}
+     <tr>
+<td>{{shop.name}}</td>
+<td>{{shop.telephone}}</td>
+<td>{{shop.adresse}}</td>
+<td>{{shop.user.firstname}}</td>
+<td><a class="btn btn-default" href="{{path('affichShop', {'id': shop.id})}} " role="button">detail</a>
+<a class="btn btn-success" href="{{path('modifShop', {'id': shop.id})}} " role="button">edit</a>
+<a class="btn btn-danger" href="{{path('suppShop', {'id': shop.id})}} " role="button">delete</a></td> </tr>  </tbody>
+
+{% endfor %}
+
+{% endblock %}
